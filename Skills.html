@@ -105,7 +105,7 @@
         <a href="index.html" class="text-2xl font-bold text-futuristik">Portfolio</a>
         <div class="hidden md:flex space-x-8">
           <a href="index.html" class="nav-link text-gray-300 hover:text-futuristik">Home</a>
-          <a href="about.html" class="nav-link text-gray-300 hover:text-futuristik">About</a>
+            <a href="about.html" class="nav-link text-gray-300 hover:text-futuristik">About</a>
           <a href="project.html" class="nav-link text-gray-300 hover:text-futuristik">Projects</a>
           <a href="Skills.html" class="nav-link text-gray-300 hover:text-futuristik">Skills</a>
           <a href="contact.html" class="nav-link text-gray-300 hover:text-futuristik">Contact</a>
@@ -118,28 +118,62 @@
     </header>
 
     <main>
-        <section id="about" class="min-h-screen flex items-center justify-center py-20 px-4">
-            <div class="container mx-auto max-w-6xl">
-                <h2 class="text-4xl font-bold mb-8 text-futuristik text-center mt-4">About Me</h2>
-                <div class="flex flex-col md:flex-row gap-12 items-center">
-                    <div class="md:w-1/2">
-                        <img src="img/arya.jpg" alt="Profile Picture" class="rounded-lg neon-border w-full max-w-md mx-auto">
+        <section id="skills" class="py-20 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center text-white mb-12 glow-text mt-4">Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="portfolio-card p-6">
+                        <h3 class="text-xl font-bold text-futuristik mb-4">Frontend Development</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>HTML5
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>CSS3
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>JavaScript
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>React.js
+                            </li>
+                        </ul>
                     </div>
-                    <div class="md:w-1/2">
-                        <p class="text-lg mb-6">
-                            Saya adalah seorang Web Developer dengan passion dalam menciptakan pengalaman digital yang menarik dan inovatif. Dengan pengalaman dalam pengembangan frontend dan backend, saya selalu berusaha menghasilkan solusi yang elegant dan efisien.
-                        </p>
-                        <p class="text-lg mb-6">
-                            Latar belakang pendidikan saya di bidang Teknik Informatika telah memberikan fondasi yang kuat dalam pemrograman dan pengembangan web. Saya terus mengikuti perkembangan teknologi terbaru dan best practices dalam industri.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="#" class="neon-border px-6 py-2 text-futuristik hover:bg-futuristik hover:bg-opacity-20 transition-all duration-300">
-                                Download CV
-                            </a>
-                            <a href="project.html" class="neon-border px-6 py-2 text-futuristik hover:bg-futuristik hover:bg-opacity-20 transition-all duration-300">
-                                Lihat Projects
-                            </a>
-                        </div>
+        
+                    <div class="portfolio-card p-6">
+                        <h3 class="text-xl font-bold text-futuristik mb-4">Backend Development</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>Node.js
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>Python
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>PHP
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>MySQL
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="portfolio-card p-6">
+                        <h3 class="text-xl font-bold text-futuristik mb-4">Tools & Others</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>Git
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>VS Code
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>Figma
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-futuristik mr-2">▹</span>Adobe XD
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -147,7 +181,7 @@
 
       <!-- Update the remaining sections with the new classes as needed -->
     </main>
-    <footer class="bg-futuristik py-4 px-8 text-center">
+    <footer class="bg-futuristik py-4 px-8 text-center fixed bottom-0 w-full">
       <p class="text-futuristik">
         &copy; 2024 Portofolio Saya. Semua hak cipta dilindungi.
       </p>
