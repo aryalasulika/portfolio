@@ -26,162 +26,164 @@
         text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
       }
 
-      .neon-border {
-        border: 2px solid #64ffda;
-        box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
       }
 
-      .portfolio-card {
-        background: rgba(17, 34, 64, 0.7);
-        border: 1px solid rgba(100, 255, 218, 0.2);
-        border-radius: 8px;
-        transition: all 0.4s ease;
-        backdrop-filter: blur(5px);
-      }
-
-      .portfolio-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
-        border-color: #64ffda;
-      }
-
-      .nav-link {
-        position: relative;
-        padding: 5px 0;
-      }
-
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(90deg, #64ffda, transparent);
-        transition: width 0.3s ease;
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      .hero-gradient {
-        background: linear-gradient(
-          180deg,
-          rgba(10, 25, 47, 0) 0%,
-          rgba(100, 255, 218, 0.1) 100%
-        );
-      }
-
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-
-      .floating {
-        animation: float 6s ease-in-out infinite;
-      }
-
-      .glow-text {
-        text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+      .sidebar.active {
+        transform: translateX(0);
       }
     </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector("button.md\\:hidden");
+        const sidebar = document.getElementById("sidebar");
+        const closeButton = document.getElementById("closeSidebar");
+
+        menuButton.addEventListener("click", () => {
+          sidebar.classList.add("active");
+        });
+
+        closeButton.addEventListener("click", () => {
+          sidebar.classList.remove("active");
+        });
+      });
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!-- Keep the existing HTML structure but add these classes -->
     <header class="bg-futuristik py-6 px-8 fixed w-full z-50">
       <nav class="container mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-futuristik">Portfolio</a>
+        <a href="index.html" class="text-2xl font-bold text-futuristik"
+          >Portfolio</a
+        >
         <div class="hidden md:flex space-x-8">
-          <a href="index.html" class="nav-link text-gray-300 hover:text-futuristik">Home</a>
-            <a href="about.html" class="nav-link text-gray-300 hover:text-futuristik">About</a>
-          <a href="project.html" class="nav-link text-gray-300 hover:text-futuristik">Projects</a>
-          <a href="Skills.html" class="nav-link text-gray-300 hover:text-futuristik">Skills</a>
-          <a href="contact.html" class="nav-link text-gray-300 hover:text-futuristik">Contact</a>
+          <a href="index.html" class="text-gray-300 hover:text-futuristik"
+            >Home</a
+          >
+          <a href="about.html" class="text-gray-300 hover:text-futuristik"
+            >About</a
+          >
+          <a href="project.html" class="text-gray-300 hover:text-futuristik"
+            >Projects</a
+          >
+          <a href="Skills.html" class="text-gray-300 hover:text-futuristik"
+            >Skills</a
+          >
+          <a href="contact.html" class="text-gray-300 hover:text-futuristik"
+            >Contact</a
+          >
         </div>
         <button class="md:hidden text-futuristik">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-16 6h16"
+            />
           </svg>
         </button>
+      </nav>
     </header>
 
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="sidebar fixed top-0 left-0 h-full w-64 bg-futuristik z-50 flex flex-col space-y-4 py-8 px-6 shadow-lg"
+    >
+      <button id="closeSidebar" class="text-gray-300 self-end">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <a href="index.html" class="text-gray-300 hover:text-futuristik">Home</a>
+      <a href="about.html" class="text-gray-300 hover:text-futuristik">About</a>
+      <a href="project.html" class="text-gray-300 hover:text-futuristik"
+        >Projects</a
+      >
+      <a href="Skills.html" class="text-gray-300 hover:text-futuristik"
+        >Skills</a
+      >
+      <a href="contact.html" class="text-gray-300 hover:text-futuristik"
+        >Contact</a
+      >
+    </div>
+
     <main>
-        <section id="skills" class="py-20 px-4">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center text-white mb-12 glow-text mt-4">Skills</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="portfolio-card p-6">
-                        <h3 class="text-xl font-bold text-futuristik mb-4">Frontend Development</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>HTML5
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>CSS3
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>JavaScript
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>React.js
-                            </li>
-                        </ul>
-                    </div>
-        
-                    <div class="portfolio-card p-6">
-                        <h3 class="text-xl font-bold text-futuristik mb-4">Backend Development</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>Node.js
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>Python
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>PHP
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>MySQL
-                            </li>
-                        </ul>
-                    </div>
-        
-                    <div class="portfolio-card p-6">
-                        <h3 class="text-xl font-bold text-futuristik mb-4">Tools & Others</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>Git
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>VS Code
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>Figma
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-futuristik mr-2">▹</span>Adobe XD
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+      <section id="skills" class="py-20 px-4 min-h-screen">
+        <div class="container mx-auto mt-8">
+          <h2 class="text-4xl font-bold text-futuristik mb-8">Skills</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-futuristik p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-semibold text-futuristik mb-4">HTML</h3>
+              <p class="text-gray-300">
+                Experienced in creating structured and semantic HTML5 documents.
+              </p>
             </div>
-        </section>
+            <div class="bg-futuristik p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-semibold text-futuristik mb-4">CSS</h3>
+              <p class="text-gray-300">
+                Proficient in CSS3, including Flexbox, Grid, and responsive
+                design.
+              </p>
+            </div>
+            <div class="bg-futuristik p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-semibold text-futuristik mb-4">
+                JavaScript
+              </h3>
+              <p class="text-gray-300">
+                Skilled in vanilla JavaScript and modern ES6+ features.
+              </p>
+            </div>
+            <div class="bg-futuristik p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-semibold text-futuristik mb-4">React</h3>
+              <p class="text-gray-300">
+                Experienced in building dynamic user interfaces with React.
+              </p>
+            </div>
+            <div class="bg-futuristik p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-semibold text-futuristik mb-4">
+                Node.js
+              </h3>
+              <p class="text-gray-300">
+                Proficient in server-side development with Node.js and Express.
+              </p>
+            </div>
+            <div class="bg-futuristik p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-semibold text-futuristik mb-4">Git</h3>
+              <p class="text-gray-300">
+                Experienced in version control using Git and GitHub.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Update the remaining sections with the new classes as needed -->
     </main>
-    <footer class="bg-futuristik py-4 px-8 text-center fixed bottom-0 w-full">
+    <footer class="bg-futuristik py-4 px-8 text-center bottom-0 w-full">
       <p class="text-futuristik">
         &copy; 2024 Portofolio Saya. Semua hak cipta dilindungi.
       </p>

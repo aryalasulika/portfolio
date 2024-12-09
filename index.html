@@ -26,122 +26,168 @@
         text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
       }
 
-      .neon-border {
-        border: 2px solid #64ffda;
-        box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
       }
 
-      .portfolio-card {
-        background: rgba(17, 34, 64, 0.7);
-        border: 1px solid rgba(100, 255, 218, 0.2);
-        border-radius: 8px;
-        transition: all 0.4s ease;
-        backdrop-filter: blur(5px);
-      }
-
-      .portfolio-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
-        border-color: #64ffda;
-      }
-
-      .nav-link {
-        position: relative;
-        padding: 5px 0;
-      }
-
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(90deg, #64ffda, transparent);
-        transition: width 0.3s ease;
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      .hero-gradient {
-        background: linear-gradient(
-          180deg,
-          rgba(10, 25, 47, 0) 0%,
-          rgba(100, 255, 218, 0.1) 100%
-        );
-      }
-
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-
-      .floating {
-        animation: float 6s ease-in-out infinite;
-      }
-
-      .glow-text {
-        text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+      .sidebar.active {
+        transform: translateX(0);
       }
     </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector("button.md\\:hidden");
+        const sidebar = document.getElementById("sidebar");
+        const closeButton = document.getElementById("closeSidebar");
+
+        menuButton.addEventListener("click", () => {
+          sidebar.classList.add("active");
+        });
+
+        closeButton.addEventListener("click", () => {
+          sidebar.classList.remove("active");
+        });
+      });
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!-- Keep the existing HTML structure but add these classes -->
     <header class="bg-futuristik py-6 px-8 fixed w-full z-50">
       <nav class="container mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-futuristik">Portfolio</a>
+        <a href="index.html" class="text-2xl font-bold text-futuristik"
+          >Portfolio</a
+        >
         <div class="hidden md:flex space-x-8">
-          <a href="#home" class="nav-link text-gray-300 hover:text-futuristik">Home</a>
-            <a href="about.html" class="nav-link text-gray-300 hover:text-futuristik">About</a>
-          <a href="project.html" class="nav-link text-gray-300 hover:text-futuristik">Projects</a>
-          <a href="Skills.html" class="nav-link text-gray-300 hover:text-futuristik">Skills</a>
-          <a href="contact.html" class="nav-link text-gray-300 hover:text-futuristik">Contact</a>
+          <a href="index.html" class="text-gray-300 hover:text-futuristik"
+            >Home</a
+          >
+          <a href="about.html" class="text-gray-300 hover:text-futuristik"
+            >About</a
+          >
+          <a href="project.html" class="text-gray-300 hover:text-futuristik"
+            >Projects</a
+          >
+          <a href="Skills.html" class="text-gray-300 hover:text-futuristik"
+            >Skills</a
+          >
+          <a href="contact.html" class="text-gray-300 hover:text-futuristik"
+            >Contact</a
+          >
         </div>
         <button class="md:hidden text-futuristik">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-16 6h16"
+            />
           </svg>
         </button>
+      </nav>
     </header>
+
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="sidebar fixed top-0 left-0 h-full w-64 bg-futuristik z-50 flex flex-col space-y-4 py-8 px-6 shadow-lg"
+    >
+      <button id="closeSidebar" class="text-gray-300 self-end">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <a href="index.html" class="text-gray-300 hover:text-futuristik">Home</a>
+      <a href="about.html" class="text-gray-300 hover:text-futuristik">About</a>
+      <a href="project.html" class="text-gray-300 hover:text-futuristik"
+        >Projects</a
+      >
+      <a href="Skills.html" class="text-gray-300 hover:text-futuristik"
+        >Skills</a
+      >
+      <a href="contact.html" class="text-gray-300 hover:text-futuristik"
+        >Contact</a
+      >
+    </div>
 
     <main>
       <section
         id="home"
-        class="min-h-screen flex items-center justify-center py-20 px-4 hero-gradient"
+        class="min-h-screen flex items-center justify-center py-20 px-4 hero-gradient relative overflow-hidden"
       >
-        <div class="text-left max-w-3xl floating">
-          <p class="text-futuristik mb-4">Halo, saya</p>
-          <h1 class="text-5xl font-bold mb-4 text-white glow-text">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 opacity-20">
+          <div
+            class="animate-pulse absolute top-20 left-10 w-20 h-20 rounded-full bg-futuristik"
+          ></div>
+          <div
+            class="animate-pulse absolute bottom-40 right-20 w-16 h-16 rounded-full bg-futuristik"
+          ></div>
+        </div>
+
+        <div
+          class="text-left max-w-3xl relative z-10 transform hover:scale-105 transition-transform duration-500"
+        >
+          <p class="text-futuristik mb-4 tracking-wider animate-fade-in">
+            Halo, saya
+          </p>
+          <h1
+            class="text-6xl font-bold mb-4 text-white tracking-tight hover:text-futuristik transition-colors duration-300"
+          >
             Arya Apriansyah Lasulika
           </h1>
-          <h2 class="text-4xl font-bold mb-6 text-gray-400">Web Developer</h2>
-          <p class="text-xl mb-8">
-            Saya membangun website yang tidak hanya indah, tetapi juga
-            fungsional dan user-friendly.
-          </p>
-          <a
-            href="contact.html"
-            class="neon-border inline-block px-8 py-3 text-futuristik hover:bg-futuristik hover:bg-opacity-20 transition-all duration-300"
+          <h2
+            class="text-4xl font-bold mb-6 bg-gradient-to-r from-gray-400 to-white bg-clip-text text-transparent"
           >
-            Hubungi Saya
-          </a>
+            Web Developer
+          </h2>
+          <p
+            class="text-xl mb-8 leading-relaxed hover:text-gray-300 transition-colors duration-300"
+          >
+            Saya membangun website yang tidak hanya indah, tetapi juga
+            fungsional dan user-friendly dengan fokus pada pengalaman pengguna
+            yang optimal.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="contact.html"
+              class="group relative inline-block px-8 py-3 text-futuristik border border-futuristik rounded-lg overflow-hidden"
+            >
+              <span class="relative z-10">Hubungi Saya</span>
+              <div
+                class="absolute inset-0 bg-futuristik transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-20"
+              ></div>
+            </a>
+            <a
+              href="project.html"
+              class="inline-block px-8 py-3 text-white hover:text-futuristik transition-colors duration-300"
+            >
+              Lihat Project →
+            </a>
+          </div>
         </div>
       </section>
-
-      <!-- Update the remaining sections with the new classes as needed -->
     </main>
     <footer class="bg-futuristik py-4 px-8 text-center">
       <p class="text-futuristik">
