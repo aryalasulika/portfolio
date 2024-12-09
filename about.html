@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Saya</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <style>
+      body {
+        background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+        font-family: "Poppins", sans-serif;
+        color: #8892b0;
+      }
+
+      .bg-futuristik {
+        background: rgba(17, 34, 64, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+      }
+
+      .text-futuristik {
+        color: #64ffda;
+        text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+      }
+
+      .neon-border {
+        border: 2px solid #64ffda;
+        box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+      }
+
+      .portfolio-card {
+        background: rgba(17, 34, 64, 0.7);
+        border: 1px solid rgba(100, 255, 218, 0.2);
+        border-radius: 8px;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(5px);
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+        border-color: #64ffda;
+      }
+
+      .nav-link {
+        position: relative;
+        padding: 5px 0;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, #64ffda, transparent);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(
+          180deg,
+          rgba(10, 25, 47, 0) 0%,
+          rgba(100, 255, 218, 0.1) 100%
+        );
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .glow-text {
+        text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Keep the existing HTML structure but add these classes -->
+    <header class="bg-futuristik py-6 px-8 fixed w-full z-50">
+      <nav class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-futuristik">Portfolio</a>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="nav-link text-gray-300 hover:text-futuristik">Home</a>
+          <a href="about.html" class="nav-link text-gray-300 hover:text-futuristik">About</a>
+          <a href="#projects" class="nav-link text-gray-300 hover:text-futuristik">Projects</a>
+          <a href="#skills" class="nav-link text-gray-300 hover:text-futuristik">Skills</a>
+          <a href="contact.html" class="nav-link text-gray-300 hover:text-futuristik">Contact</a>
+        </div>
+        <button class="md:hidden text-futuristik">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"/>
+          </svg>
+        </button>
+    </header>
+
+    <main>
+        <section id="about" class="min-h-screen flex items-center justify-center py-20 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl font-bold mb-8 text-futuristik text-center">About Me</h2>
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/2">
+                        <img src="img/arya.jpg" alt="Profile Picture" class="rounded-lg neon-border w-full max-w-md mx-auto">
+                    </div>
+                    <div class="md:w-1/2">
+                        <p class="text-lg mb-6">
+                            Saya adalah seorang Web Developer dengan passion dalam menciptakan pengalaman digital yang menarik dan inovatif. Dengan pengalaman dalam pengembangan frontend dan backend, saya selalu berusaha menghasilkan solusi yang elegant dan efisien.
+                        </p>
+                        <p class="text-lg mb-6">
+                            Latar belakang pendidikan saya di bidang Teknik Informatika telah memberikan fondasi yang kuat dalam pemrograman dan pengembangan web. Saya terus mengikuti perkembangan teknologi terbaru dan best practices dalam industri.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="#" class="neon-border px-6 py-2 text-futuristik hover:bg-futuristik hover:bg-opacity-20 transition-all duration-300">
+                                Download CV
+                            </a>
+                            <a href="#projects" class="neon-border px-6 py-2 text-futuristik hover:bg-futuristik hover:bg-opacity-20 transition-all duration-300">
+                                Lihat Projects
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!-- Update the remaining sections with the new classes as needed -->
+    </main>
+    <footer class="bg-futuristik py-4 px-8 text-center">
+      <p class="text-futuristik">
+        &copy; 2024 Portofolio Saya. Semua hak cipta dilindungi.
+      </p>
+    </footer>
+  </body>
+</html>
